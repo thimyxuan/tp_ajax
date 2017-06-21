@@ -4,7 +4,7 @@
 
 $(function(){
 
-    let images = ["http://www.groupebader.com/VN/CLIO-LIMITED-BLANC-GLACIER-1.jpg", "http://media.peugeot.be/image/77/6/peugeot_3008_galerie-13-1.80776.19.jpg?autocrop=1", "https://media.ed.edmunds-media.com/audi/a4/2017/ot/2017_audi_a4_LIFE1_ot_1109163_1280.jpg"];
+    let images = [];
 
     let index = 0;
     setInterval(function(){ // setInterval : au bout de x secondes tu executes le code, pour répéter le code
@@ -38,17 +38,20 @@ $(function(){
 	  	//console.log(data);
 	  	$("#right_column ul").html(content);
 
-	  	$("#right_column ul > li > a").click(function(e){
+	  	$("#right_column ul > li").click(function(e){
 			e.preventDefault();
 
 			var idVoiture = $(this).attr("id"); // récupération de l'id
+			//console.log(idVoiture);
 			//console.log(idVoiture.split("-"));
 			idVoiture = idVoiture.split("-");
 
+
+			
 				var ficheVoiture = $.ajax({
 			  		url: "http://localhost/tp_ajax/api.php",
 			  		method: "GET",
-			  		data: { id: idVoiture[1] }, // on obtient un tableau avec les données voiture et #id, la voiture se trouve à l'index 0 alors que le #id se trouve à l'index 1 du tableau
+			  		data: { id : idVoiture[1] }, // on obtient un tableau avec les données voiture et #id, la voiture se trouve à l'index 0 alors que le #id se trouve à l'index 1 du tableau
 			  		dataType: "json"
 				});
 
