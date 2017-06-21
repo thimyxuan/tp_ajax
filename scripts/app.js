@@ -1,5 +1,25 @@
 
 
+//****CREATION D'UN SLIDER****//
+
+$(function(){
+
+    let images = ["http://www.groupebader.com/VN/CLIO-LIMITED-BLANC-GLACIER-1.jpg", "http://media.peugeot.be/image/77/6/peugeot_3008_galerie-13-1.80776.19.jpg?autocrop=1", "https://media.ed.edmunds-media.com/audi/a4/2017/ot/2017_audi_a4_LIFE1_ot_1109163_1280.jpg"];
+
+    let index = 0;
+    setInterval(function(){ // setInterval : au bout de x secondes tu executes le code, pour répéter le code
+        
+        if(index == images.length)
+            index = 0; // pas d'accolade car qu'une seule condition
+        $("#slider-image").attr("src",images[index]);
+        index++;
+        //console.log(images.length);
+
+    }, 3000);   
+
+
+
+
 //****AFFICHER LES VOITURES DANS LA LISTE DE DROITE****//
 
 	var request = $.ajax({
@@ -12,7 +32,7 @@
 
 		var content = " ";
 		data.forEach(function(element){ // forEach ne fonctionne que sur des array et non pas sur des objets en js ( et en php forEach fonctionne sur les array et objets)
-		content += '<li id="voiture'+element.id+'"><a href="#">'+element.marque+' '+element.modele+'</a></li>';
+		content += '<li id="voiture-'+element.id+'"><a href="#">'+element.marque+' '+element.modele+'</a></li>';
 		});
 
 	  	//console.log(data);
@@ -74,5 +94,6 @@
 		  		$("#message_ajax").html("<div class='alert alert-danger'><strong>Error!</strong>Car register</div>");
 		  		console.log("Car not register");
 			});
-
 	});
+
+});
