@@ -23,10 +23,10 @@ if($_SERVER['REQUEST_METHOD']=='POST')
 		$stmt->bindParam(':annee', $_POST['annee'], PDO::PARAM_STR);
 		$stmt->bindParam(':couleur', $_POST['couleur'], PDO::PARAM_STR);
 		$stmt->bindParam(':image', $_POST['image'], PDO::PARAM_STR);
+		$stmt->execute();
 	}
-	$stmt->execute();
 }
-
+	
 elseif($_SERVER['REQUEST_METHOD'] =='GET')
 {
 	if(empty($_GET))
