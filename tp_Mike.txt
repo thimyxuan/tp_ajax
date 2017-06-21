@@ -1,0 +1,15 @@
+Exercice site Ajax : 
+Dans cet exercice, les compétences Git, Js, HTML, CSS seront mises à rude épreuve. Par groupe de 2, créé un dépôt git pour l'héberger le projet et partager les tâches de manière équitable.
+
+Créé un site via http://www.os-templates.com/website-templates/template-downloads/free-basic-html5-templates/basic-87.7z des location de vehicule.
+
+Ajouter un formulaire bootstrap avec les champs suivant:
+	- Marque varchad
+	- Modele varchad
+	- Annee	YEAR
+	- Couleur Enum(black,white,blue,mike)
+	- Image varchad ->url de l'image
+
+Ajouter les information dans la base de donnée (nom de la bdd -> MikeMonRoi).
+Gestion de message d'erreur et de sucess.
+Modifier Categorie pour afficher tout les vehicules enregistrer.
